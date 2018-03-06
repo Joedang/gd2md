@@ -1,16 +1,16 @@
-GDDIR = docsSOPs
-DOCXDIR = $(GDDIR)/docx
-PDFDIR = $(GDDIR)/pdf
-LINKFILE = $(GDDIR)/SOPlinks.txt
-DOCXS:=$(shell ls $(DOCXDIR)/*)
+GDDIR = 
+DOCXDIR = $(GDDIR)docx/
+PDFDIR = $(GDDIR)pdf/
+LINKFILE = $(GDDIR)SOPlinks.txt
+DOCXS:=$(shell ls $(DOCXDIR)*.docx)
 
 all: download markdown pdf
 
 download: $(LINKFILE)
-	wget --input-file=$(LINKFILE) --directory-prefix=$(DOCXDIR)
+	./scrapeDocx.sh $(LINKFILE)
 
-markdown: $(DOCXDIR)/*
-	./docx2md.sh $(DOCXDIR)/*
+markdown: $(DOCXDIR)*
+	./docx2md.sh $(DOCXDIR)*
 	mv media/* images/
 	rmdir media
 
@@ -18,4 +18,4 @@ pdf: *.md
 	pandoc *.md -t markdown_github
 
 clean:
-	rm -rf $(DOCXDIR)/* $(PDFDIR)/*
+	rm -rf $(DOCXDIR)* $(PDFDIR)*
