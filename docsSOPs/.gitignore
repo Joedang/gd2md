@@ -3,3 +3,16 @@
 
 # PDFs
 *.pdf
+
+# images
+*.jpg
+*.png
+
+# downloaded headers
+*.header
+
+# naiive downloads
+*.download
+
+# markdown files that haven't been deployed to the wiki
+*.md

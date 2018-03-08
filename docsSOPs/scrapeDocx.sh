@@ -14,6 +14,12 @@ docxSuffix='/export?format=docx'
 # extract the Googoo Drive IDs from the list files given:
 GDIDS=`cat "$@" | grep -P -o -e '(?<=id=)[[:alnum:]_-]*$'`
 
+# dowload directory
+DLdir=docx/
+
+# header directory
+Hdir=headers/
+
 echo links given: 
 cat "$@"
 echo
@@ -30,8 +36,12 @@ do
 	# don't wuss-out if there's an error
 	set +e 
 	{ # try
-	wget "$docxLink" --output-document=docx/$id'.docx'
-	#echo normally I\'d download here...
+	curl -L -D $Hdir$id.header "$docxLink" -o $DLdir$id'.download'
+	if ! grep -i Error $Hdir$id.header;# if the server didn't give errors, rename the download
+	then
+		filename=`cat $id.header | grep -P -o -e '(?<=filename=").*(?=")'`
+		echo I would like to move $DLdir$id.download to $DLdir$filename
+	fi
 	} || { # catch
 	echo WARNING: $id failed to download.
 	fails=$((fails + 1))

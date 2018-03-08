@@ -1,3 +1,10 @@
+---
+title: $title$
+author: $author$
+date: $date$
+
+---
+
 $if(titleblock)$
 $titleblock$
 

@@ -10,9 +10,9 @@ download: $(LINKFILE)
 	./scrapeDocx.sh $(LINKFILE)
 
 markdown: $(DOCXDIR)*
-	./docx2md.sh $(DOCXDIR)*
-	mv media/* images/
-	rmdir media
+	./docx2md.sh $(DOCXDIR)*.docx
+	# mv media/* images/
+	# rmdir media
 
 pdf: *.md
 	pandoc *.md -t markdown_github
