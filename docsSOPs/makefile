@@ -5,7 +5,7 @@ HEADERDIR = $(GDDIR)headers/
 LINKFILE = $(GDDIR)SOPlinks.txt
 # DOCS:=$(shell ls $(DOCSDIR)*.docx)
 
-all: download markdown pdf deploy
+all: download markdown deploy
 
 download: $(LINKFILE)
 	# make sure the download and header directories exist
@@ -27,7 +27,8 @@ deploy: #$(DOCSDIR)%.md
 	# move the markdown files into the wiki:
 	mv $(DOCSDIR)*.md ../
 	# move their media files into the wiki:
-	find $(DOCSDIR) -maxdepth 1 -type d -not -path $(DOCSDIR) -exec mv {} ../ \;
+	mv $(DOCSDIR)images/* ../images/
+	#find $(DOCSDIR) -maxdepth 1 -type d -not -path $(DOCSDIR) -exec mv {} ../ \;
 
 clean:
 	# nuke the processing directories
