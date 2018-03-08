@@ -1,7 +1,7 @@
-https://drive.google.com/open?id=1x9sxi3rikPEjh2--X68eALqWpuUHYNjM_IMc1kB4T58
-https://drive.google.com/open?id=1M4skjB--igZjOkc1LTYB8ZbXM914V7swPWkY_Jemjvg
-https://drive.google.com/open?id=1INud6oCGb91eG66s3CbRsaI9LtjLOuevllvA9WApalw
-https://drive.google.com/open?id=1KrdQJEVvaNRtzGpaDMAD4_4_m16m-DwWtz-qP2B0WoU
-https://drive.google.com/open?id=1rfctBNNMNUM59Fh0x6nblmjj8bi3pkpfKu8RQ4VJWTQ
-https://drive.google.com/open?id=0Bzvr_SLqChgQbmNaVTIwcG1sc1E
-https://drive.google.com/open?id=0B69BIoA78seEdWh0SVlUc0NlXzg
+https://drive.google.com/open?id=1x9sxi3rikPEjh2--X68eALqWpuUHYNjM_IMc1kB4T58 # K-40MiniLaserSOPWIP
+https://drive.google.com/open?id=1M4skjB--igZjOkc1LTYB8ZbXM914V7swPWkY_Jemjvg # Formlabs 2 Quick Start Guide
+https://drive.google.com/open?id=1INud6oCGb91eG66s3CbRsaI9LtjLOuevllvA9WApalw # 3900 Mini Mill SOP
+https://drive.google.com/open?id=1KrdQJEVvaNRtzGpaDMAD4_4_m16m-DwWtz-qP2B0WoU # Ultimaker SOP (2 or 3?!)
+https://drive.google.com/open?id=1rfctBNNMNUM59Fh0x6nblmjj8bi3pkpfKu8RQ4VJWTQ # QD-1390 Big Laser SOP
+https://drive.google.com/open?id=1x9sxi3rikPEjh2--X68eALqWpuUHYNjM_IMc1kB4T58 # K-40 Mini Laser SOP (WIP)
+https://drive.google.com/open?id=1_fsvfcXovk0DIwEqg3iBnpJcD0d4PVqQz2TXAP_ROHA # UM3 extended setup
