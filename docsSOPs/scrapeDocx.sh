@@ -24,7 +24,7 @@ echo links given:
 cat "$@"
 echo
 echo Google Drive IDs: 
-echo $GDIDS
+echo $GDIDS | tr '\ ' '\n'
 echo
 
 fails=0

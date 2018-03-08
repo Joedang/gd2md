@@ -3,7 +3,7 @@ DOCSDIR = $(GDDIR)downloads/
 PDFDIR = $(GDDIR)pdf/
 HEADERDIR = $(GDDIR)headers/
 LINKFILE = $(GDDIR)SOPlinks.txt
-DOCS:=$(shell ls $(DOCSDIR)*.docx)
+# DOCS:=$(shell ls $(DOCSDIR)*.docx)
 
 all: download markdown pdf deploy
 
@@ -13,16 +13,17 @@ download: $(LINKFILE)
 	# download the links provided in LINKFILE
 	./scrapeDocx.sh $(LINKFILE)
 
-markdown: $(DOCSDIR)*.docx
+markdown: #$(DOCSDIR)%.docx
 	# convert the docx files to markdown
 	./docx2md.sh $(DOCSDIR)
 
-pdf: $(DOCSDIR)*.md
+pdf: #$(DOCSDIR)%.md
 	# convert the markdown files to pdf
-	find $(DOCSDIR) -iname '*.md' -type f -exec sh -c \
-		'pandoc $${0} --toc --latex-engine=xelatex -o $${0%.md}.pdf' {} \;
+	#find $(DOCSDIR) -iname '*.md' -type f -exec sh -c \
+	#	'pandoc $${0} --toc --latex-engine=xelatex -o $${0%.md}.pdf' {} \;
+	./md2pdf.sh $(DOCSDIR)
 
-deploy: $(DOCSDIR)*.md
+deploy: #$(DOCSDIR)%.md
 	# move the markdown files into the wiki:
 	mv $(DOCSDIR)*.md ../
 	# move their media files into the wiki:
