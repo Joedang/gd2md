@@ -13,9 +13,9 @@ download: $(LINKFILE)
 	# download the links provided in LINKFILE
 	./scrapeDocx.sh $(LINKFILE)
 
-markdown: $(DOCSDIR)*
+markdown: $(DOCSDIR)*.docx
 	# convert the docx files to markdown
-	./docx2md.sh $(DOCSDIR)*.docx
+	./docx2md.sh $(DOCSDIR)
 
 pdf: $(DOCSDIR)*.md
 	# convert the markdown files to pdf
@@ -26,7 +26,7 @@ deploy: $(DOCSDIR)*.md
 	# move the markdown files into the wiki:
 	mv $(DOCSDIR)*.md ../
 	# move their media files into the wiki:
-	find $(DOCSDIR) -maxdepth 1 -type d -exec mv {} ../ \;
+	find $(DOCSDIR) -maxdepth 1 -type d -not -path $(DOCSDIR) -exec mv {} ../ \;
 
 clean:
 	# nuke the processing directories
