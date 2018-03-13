@@ -12,7 +12,7 @@ docxPrefix='https://docs.google.com/document/u/1/d/'
 docxSuffix='/export?format=docx'
 
 # extract the Googoo Drive IDs from the list files given:
-GDIDS=`cat "$@" | grep -P -o -e '(?<=id=)[[:alnum:]_-]*$'`
+GDIDS=`cat "$@" | grep -P -o -e '(?<=id=)[[:alnum:]_-]*'`
 
 # dowload directory
 DLdir=downloads/
